@@ -1,0 +1,26 @@
+# /etc/conf.d/zsovd: config file for /etc/init.d/zsovd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/zsov/zsov.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/zsovd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/zsovd.pid"
+
+# Where to write zsovd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/zsovd"
+
+# User and group to own zsovd process
+#BITCOIND_USER="zsov"
+#BITCOIND_GROUP="zsov"
+
+# Path to zsovd executable
+#BITCOIND_BIN="/usr/bin/zsovd"
+
+# Nice value to run zsovd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=zSov
+Comment=zSov P2P Cryptocurrency
+Comment[fr]=zSov, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=zSov, eşten eşe kriptografik sanal para birimi
+Exec=zsov-qt %u
+Terminal=false
+Type=Application
+Icon=zsov128
+MimeType=x-scheme-handler/zsov;
+Categories=Office;Finance;
