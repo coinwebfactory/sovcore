@@ -2123,15 +2123,13 @@ int64_t GetBlockValue(int nHeight)
 
     if (nHeight == 0) {
         nSubsidy = 200000 * COIN;
-    } else if (nHeight < 1500) {
-        nSubsidy = 1 * COIN;
     } else if (nHeight < 151200) {
         nSubsidy = 250 * COIN;
     } else if (nHeight < 259200) {
         nSubsidy = 50 * COIN;
     } else if (nHeight < 302399) {
         nSubsidy = 50 * COIN;
-    } else if (nHeight < 302399) {
+    } else if (nHeight < 345599) {
         nSubsidy = 45 * COIN;
     } else if (nHeight < 388799) {
         nSubsidy = 40 * COIN;
@@ -2160,13 +2158,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     if (nHeight == 0) {
         ret = blockValue * 0;
-    } else if (nHeight < 1500) {
-        ret = blockValue * 0.1;
-    } else if (nHeight < 151200) {
+    } else if (nHeight < 43200) {
         ret = blockValue * 0.2;
-    } else if (nHeight < 259200) {
+    } else if (nHeight < 151200) {
         ret = blockValue * 0.3;
-    } else if (nHeight < 302399) {
+    } else if (nHeight < 259200) {
         ret = blockValue * 0.5;
     } else {
         ret = blockValue * 0.9;
@@ -2277,7 +2273,7 @@ void Misbehaving(NodeId pnode, int howmuch)
     int banscore = GetArg("-banscore", 1000);
     if (state->nMisbehavior >= banscore && state->nMisbehavior - howmuch < banscore) {
         LogPrintf("Misbehaving: %s (%d -> %d) BAN THRESHOLD EXCEEDED\n", state->name, state->nMisbehavior - howmuch, state->nMisbehavior);
-        state->fShouldBan = true;
+        state->fShouldBan = false;
     } else
         LogPrintf("Misbehaving: %s (%d -> %d)\n", state->name, state->nMisbehavior - howmuch, state->nMisbehavior);
 }
